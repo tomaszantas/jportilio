@@ -1,0 +1,80 @@
+/*** buttons ***/
+.jprt-buttons {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.jprt-buttons .jprt-btn {
+	background: #27b0d1;
+	color: #fff;
+	font-size: 16px;
+	padding: 10px 15px;
+	margin: 10px;
+	box-shadow: none;
+	border: 2px solid #27b0d1;
+	outline-style: none;
+}
+.jprt-buttons .jprt-btn:hover {
+	background: #27dbd1;
+	color: #fff;
+	border: 2px solid #27dbd1;
+	outline-style: none;
+}
+.jprt-buttons .jprt-btn.jprt-btn-active {
+	background: #fff;
+	color: #27bbd1;
+	outline-style: none;
+	border: 2px solid #27dbd1;
+}
+.jprt-buttons .jprt-btn.jprt-btn-active:hover {
+	background: #27dbd1;
+	color: #fff;
+	border: 2px solid #27dbd1;
+	outline-style: none;
+}
+
+/*** grid ***/
+.jprt-item {
+	background: #ddd;
+}
+.jprt-item:nth-child(odd) .jprt-caption {
+	background: #27b0d1;
+}
+.jprt-item:nth-child(even) .jprt-caption {
+	background: #27bbd1;
+}
+.jprt-hover {
+	background: #27d1a9;
+}
+.jprt-content {
+	background: #777;
+	color: #eee;
+}
+
+
+
+/*** item caption ***/
+.jprt-caption h1 {
+	color: #fff;
+}
+
+
+/**** decorations ***/
+.jprt-features li {
+	background: #fff;
+	color: #27b0d1;
+}
+
+.jprt-item-status {
+	color: #fff;
+}
+
+.jprt-item-tags {
+	background: rgba(0,0,0,0.2);
+	color: #fff;
+}
+.jprt-item-title { 
+	background: rgba(0,0,0,0.2);
+	color: #fff;
+}
+

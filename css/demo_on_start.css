@@ -1,0 +1,45 @@
+.fruit_veg_img {
+	width: 40%;
+	max-width: 200px;
+	padding-top: 50%;
+	margin-top: -20%;	
+}
+
+.fruit_veg_img_in_cnt {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.custom-content-title{
+	margin-top: 100px;
+	color: #444;
+	font-size: 36px;
+}
+.jprt-content {
+	background: #b6e86e;
+}
+
+#apple_item {
+	background: #66ca66;
+}
+#carrot_item {
+	background: #e9983f;
+}
+#arbuz_item {
+	background: #df7158;
+}
+#beans_item {
+	background: #8cb666;
+}
+#banana_item {
+	background: #eae15a;
+}
+#celery_item {
+	background: #c0f491;
+}
+#citrus_item {
+	background: #ffeb63;
+}
+#radish_item {
+	background: #ff8391;
+}
+

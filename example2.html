@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width"> 
+		<title>jportilio</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<!--link rel="stylesheet" type="text/css" href="css/own_grid_system.css" /-->
+		<link rel="stylesheet" type="text/css" href="css/prism.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio_style_default.css" />
+		
+
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>	
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jportilio.js"></script>
+		<script type="text/javascript" src="js/prism.js"></script>
+	</head>
+	<body>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-61329465-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+		
+		<script>
+			$(function () {
+				$('.jprt-container').jportilio();
+			});
+		</script>
+		
+		<header class='container-fluid'>
+			<div class='row text-center'>
+				<h1>jPortilio.js</h1>
+				<p>JQuery plugin to create nice filterable grid of items, such as portfolio</p>
+			</div>
+			<div class='row text-center btns-header'>
+				<a href='index.html' class='btn-jprt-lg'>Back</a>
+			</div>
+		</header>
+		
+		<div id='demo' class='container'>
+			<div class='row text-center'>
+				<h1>Example 2</h1>
+				<p><em>(Presents the 3 methods of showing item's content after clicking on item)</em></p>
+			</div>
+		</div>
+		
+		
+		
+		<div class='jprt-buttons'>
+			<button class='jprt-btn' data-jprtgrid='jprt-1' data-tag='mobile'>Mobile</button>
+			<button class='jprt-btn' data-jprtgrid='jprt-1' data-tag='ux,design'>Design</button>
+		</div>
+		
+		
+		<div id='jprt-1' class='container jprt-container'>
+			<div class='jprt-item' data-tags='mobile' data-content-show='cover'>
+				<div class='jprt-caption'>
+					<h1>"Cover"</h1>
+					<p>Tag: mobile</p>
+				</div>
+				<div class='jprt-content'>
+					<h1>This is the content of item!</h1>
+				</div>
+				<div class='jprt-hover'>
+					<h1>Cover (click on me!)</h1>
+				</div>
+				
+			</div>
+			
+			<div class='jprt-item' data-tags='mobile,design' data-content-show='redirect' data-content-url='http://www.codepany.com'>
+				<div class='jprt-caption'>
+					<h1>"Redirect to new page"</h1>
+					<p>Tag: mobile, design</p>
+				</div>
+				<div class='jprt-content'>
+							
+				</div>
+				<div class='jprt-hover'>
+					<h1>I'll redirect you to new page!</h1>
+				</div>
+			</div>
+			
+			<div class='jprt-item' data-tags='ux' data-content-show='new_section'>
+				<div class='jprt-caption'>
+					<h1>"New section"</h1>
+					<p>Tag: ux</p>
+				</div>
+				<div class='jprt-content'>
+					<h1>This content is shown in new element, below the item!</h1>
+				</div>
+				<div class='jprt-hover'>
+					<h1>I'll display content below!</h1>
+				</div>
+			</div>
+			
+			<div class='jprt-item' data-tags='mobile,design' data-content-show='cover'>
+				<div class='jprt-caption' >
+					<h1>"Cover"</h1>
+					<p>Tag: mobile, design</p>
+				</div>
+				<div class='jprt-content'>
+					<h1>This is the content of item!</h1>
+				</div>
+				<div class='jprt-hover'>
+					<h1>Cover (click on me!)</h1>
+				</div>
+			</div>
+			
+			
+			<div class='jprt-item' data-content-show='redirect' data-content-url='http://www.codepany.com'>
+				<div class='jprt-caption'>
+					<h1>"Redirect to new page"</h1>
+					<p>Tag: - </p>
+				</div>
+				<div class='jprt-content'>
+							
+				</div>
+				<div class='jprt-hover'>
+					<h1>I'll redirect you to new page!</h1>
+				</div>
+			</div>
+			
+			<div class='jprt-item' data-content-show='new_section'>
+				<div class='jprt-caption'>
+					<h1>"New section"</h1>
+					<p>Tag: - </p>
+				</div>
+				<div class='jprt-content'>
+					<h1>This content is shown in new element, below the item!</h1>
+				</div>
+				<div class='jprt-hover'>
+					<h1>I'll display content below!</h1>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+		
+		<div class='container'>
+			<div class='row'>
+				<h3>Source code</h3>
+							
+<pre><code class="language-markup">
+&lt;html lang="en">
+	&lt;head>
+		
+		&lt;!-- ... -->
+		
+		&lt;link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		&lt;link rel="stylesheet" type="text/css" href="css/jportilio.css" />
+		&lt;link rel="stylesheet" type="text/css" href="css/jportilio_style_default.css" />
+		
+		&lt;script type="text/javascript" src="js/jquery-1.11.2.min.js">&lt;/script>	
+		&lt;script type="text/javascript" src="js/bootstrap.min.js">&lt;/script>
+		&lt;script type="text/javascript" src="js/jportilio.js"&lt;/script>
+		
+		&lt;!-- ... -->
+		
+	&lt;/head>
+	&lt;body>
+		&lt;!-- jportilio initialization -->
+		&lt;script>
+			$(function () {
+				$('.jprt-container').jportilio();
+			});
+		&lt;script>	
+	
+	
+		&lt;!-- group of tag buttons: -->
+		&lt;div class='jprt-buttons'>
+			&lt;button class='jprt-btn' data-jprtgrid='jprt-1' data-tag='mobile'>Mobile&lt;/button>
+			&lt;button class='jprt-btn' data-jprtgrid='jprt-1' data-tag='ux,design'>Design&lt;/button>
+		&lt;/div>
+		
+		
+		
+		&lt;!-- grid of items: -->
+		&lt;div id='jprt-1' class='container jprt-container'>
+			&lt;div class='jprt-item' data-tags='mobile' data-content-show='cover'>
+				&lt;div class='jprt-caption'>
+					&lt;h1>"Cover"&lt;/h1>
+					&lt;p>Tag: mobile&lt;/p>
+				&lt;/div>
+				&lt;div class='jprt-content'>
+					&lt;h1>This is the content of item!&lt;/h1>
+				&lt;/div>
+				&lt;div class='jprt-hover'>
+					&lt;h1>Cover (click on me!)&lt;/h1>
+				&lt;/div>
+				
+			&lt;/div>
+			
+			&lt;div class='jprt-item' data-tags='mobile,design' data-content-show='redirect' data-content-url='http://www.codepany.com'>
+				&lt;div class='jprt-caption'>
+					&lt;h1>"Redirect to new page"&lt;/h1>
+					&lt;p>Tag: mobile, design&lt;/p>
+				&lt;/div>
+				&lt;div class='jprt-content'>
+							
+				&lt;/div>
+				&lt;div class='jprt-hover'>
+					&lt;h1>I'll redirect you to new page!&lt;/h1>
+				&lt;/div>
+			&lt;/div>
+			
+			&lt;div class='jprt-item' data-tags='ux' data-content-show='new_section'>
+				&lt;div class='jprt-caption'>
+					&lt;h1>"New section"&lt;/h1>
+					&lt;p>Tag: ux&lt;/p>
+				&lt;/div>
+				&lt;div class='jprt-content'>
+					&lt;h1>This content is shown in new element, below the item!&lt;/h1>
+				&lt;/div>
+				&lt;div class='jprt-hover'>
+					&lt;h1>I'll display content below!&lt;/h1>
+				&lt;/div>
+			&lt;/div>
+			
+			&lt;div class='jprt-item' data-tags='mobile,design' data-content-show='cover'>
+				&lt;div class='jprt-caption' >
+					&lt;h1>"Cover"&lt;/h1>
+					&lt;p>Tag: mobile, design&lt;/p>
+				&lt;/div>
+				&lt;div class='jprt-content'>
+					&lt;h1>This is the content of item!&lt;/h1>
+				&lt;/div>
+				&lt;div class='jprt-hover'>
+					&lt;h1>Cover (click on me!)&lt;/h1>
+				&lt;/div>
+			&lt;/div>
+			
+			
+			&lt;div class='jprt-item' data-content-show='redirect' data-content-url='http://www.codepany.com'>
+				&lt;div class='jprt-caption'>
+					&lt;h1>"Redirect to new page"&lt;/h1>
+					&lt;p>Tag: - &lt;/p>
+				&lt;/div>
+				&lt;div class='jprt-content'>
+							
+				&lt;/div>
+				&lt;div class='jprt-hover'>
+					&lt;h1>I'll redirect you to new page!&lt;/h1>
+				&lt;/div>
+			&lt;/div>
+			
+			&lt;div class='jprt-item' data-content-show='new_section'>
+				&lt;div class='jprt-caption'>
+					&lt;h1>"New section"&lt;/h1>
+					&lt;p>Tag: - &lt;/p>
+				&lt;/div>
+				&lt;div class='jprt-content'>
+					&lt;h1>This content is shown in new element, below the item!&lt;/h1>
+				&lt;/div>
+				&lt;div class='jprt-hover'>
+					&lt;h1>I'll display content below!&lt;/h1>
+				&lt;/div>
+			&lt;/div>
+			
+			
+		&lt;/div>
+			
+					
+	&lt;/body>
+&lt;/html>		
+</code></pre>				
+				
+				
+			</div>
+			
+		</div>
+
+
+		
+	</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width"> 
+		<title>jportilio</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/prism.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo_on_start.css" />
+		
+
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>	
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jportilio.min.js"></script>
+		<script type="text/javascript" src="js/report_ga_events.js"></script>
+		<script type="text/javascript" src="js/prism.js"></script>
+	</head>
+	
+	
+	
+	<body class='index'>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-61329465-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+		
+		<header class='container-fluid'>
+			<div class='row text-center'>
+				<h1>jPortilio.js</h1>
+				<p>JQuery plugin to create nice responsive, filterable grid of items, such as portfolio</p>
+			</div>
+			<div class='row text-center btns-header'>
+				<a href='index.html' class='btn-jprt-lg'>Start</a>
+				<a href='demo.html' class='btn-jprt-lg'>Demo</a>
+				<a href='doc.html' class='btn-jprt-lg'>Documentation</a>				
+				<a href='demo.html' class='btn-jprt-lg'>Github</a>
+			</div>
+		</header>
+		
+		<section class='container'>
+			<div class='row text-center'>
+				<h1>Download</h1>
+			</div>
+			<div class='row'>
+				<h2>1. Download</h2>
+				<p>To use jPortilio plugin, you need to download: </p>
+				<ul>
+					<li><a id='jportilio_js' href='dist/js/jportilio.js' target='_blank' class='download_link'>jportilio.js</a> OR <a id='jportilio_min_js' href='dist/js/jportilio.min.js' target='_blank' class='download_link'>jportilio.min.js</a></li>
+					<li><a id='jportilio_css' href='dist/css/jportilio.css' target='_blank' class='download_link'>jportilio.css</a> OR <a id='jportilio_min_css' href='dist/css/jportilio.min.css' target='_blank' class='download_link'>jportilio.min.css</a></li>
+				</ul>
+				<p>Optionally, you can download also one or more jPortilio themes from section <a href='#themes_download'>Themes</a>.</p>
+
+				<p><strong>IMPORTANT:</strong> jPortilio requires jQuery.</p>
+			</div>
+			
+			<div id='themes_download' class='row'>
+				<h2>2. Themes</h2>
+				<p>Optionally, you can download one or more jPortilio themes:</p>
+				<ul>
+					<li>Dark: <a id='jportilio_style_dark' href='dist/css/jportilio_style_dark.css' target='_blank' class='download_link'>jportilio_style_dark.css</a> OR <a id='jportilio_style_dark_min' href='dist/css/jportilio_style_dark.min.css' target='_blank' class='download_link'>jportilio_style_dark.min.css</a></li>
+					<li>Light: <a id='jportilio_style_light' href='dist/css/jportilio_style_light.css' target='_blank' class='download_link'>jportilio_style_light.css</a> OR <a id='jportilio_style_light_min' href='dist/css/jportilio_style_light.min.css' target='_blank' class='download_link'>jportilio_style_light.min.css</a></li>
+					<li>Codepany: <a id='jportilio_style_codepany' href='dist/css/jportilio_style_codepany.css' target='_blank' class='download_link'>jportilio_style_codepany.css</a> OR <a id='jportilio_style_codepany_min' href='dist/css/jportilio_style_codepany.min.css' target='_blank' class='download_link'>jportilio_style_codepany.min.css</a></li>
+				</ul>
+				<p>Using themes is very simple. You need to add theme's class name to 2 elements: <strong>group of tag buttons</strong> and <strong>grid of items</strong>.
+				The theme's class names are following: 
+				</p>
+				<ul>
+					<li>Default: remove any theme's class to return to default style</li>
+					<li>Dark: <code>jprt-dark-style</code></li>
+					<li>Light: <code>jprt-light-style</code></li>
+					<li>Codepany: <code>jprt-codepany-style</code></li>
+				</ul>
+				<p>Adding themes is shown below. In example, the dark theme class name is used.</p>
+				<pre><code class="language-markup">
+&lt;!-- group of tag buttons -->
+&lt;div id='tag-buttons' class='jprt-buttons jprt-dark-style'>
+	&lt;!-- ... -->
+&lt;/div>
+
+&lt;!-- grid of items -->
+&lt;div id='jprt-1' class='container jprt-container jprt-dark-style'>
+	&lt;!-- ... -->
+&lt;/div>
+</code></pre>
+				
+			</div>
+		</section>
+		
+		
+		
+		<footer class='container-fluid'>
+			<div class='container'>
+				<div class='row'>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<h1>Index:</h1>
+						<ul class='index_in_footer'>
+							<li><a href='index.html'>start</a></li>
+							<li><a href='doc.html'>documentation</a></li>
+							<li><a href='demo.html'>demo</a></li>
+							<li><a href='demo.html'>download</a></li>
+							<li><a href='github.com'>github</a></li>
+						</ul>
+					</div>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<h1>Examples:</h1>
+						<ul class='examples_list'>
+							<li><a href='index.html'>start</a></li>
+							<li><a href='demo.html'>demo</a></li>
+							<li><a href='http://codepany.com'>codepany.com</a></li>
+						</ul>
+						<h1>Resources</h1>
+						<ul>
+							<li>tutorial: <a href='http://codeonhill.com'>codeonhill.com</a></li>
+						</ul>
+						
+					</div>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<div class='credits'>
+							<h1>Credits:</h1>
+							<ul>
+								<li> code snippets: prismjs.com</li>
+							</ul>
+						</div>
+						<div class='contact_in_footer'>
+							<h1>Contact</h1>
+							<ul>
+								<li><a href='http://github.com'>Github</a></li>
+								<li><a href='http://codepany.com'>codepany.com</a></li>
+								<li>contact@codepany.com</li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</footer>
+
+	</body>
+</html>
+	

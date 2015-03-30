@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width"> 
+		<title>jportilio</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<!--link rel="stylesheet" type="text/css" href="css/own_grid_system.css" /-->
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/prism.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio_style_default.css" />
+		
+
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>	
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jportilio.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/prism.js"></script>
+	</head>
+	<body class='index'>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-61329465-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+		
+		<header class='container-fluid'>
+			<div class='row text-center'>
+				<h1>jPortilio.js</h1>
+				<p>JQuery plugin to create nice responsive, filterable grid of items, such as portfolio</p>
+			</div>
+			<div class='row text-center btns-header'>
+				<a href='index.html' class='btn-jprt-lg'>Start</a>
+				<a href='demo.html' class='btn-jprt-lg'>Demo</a>
+				<a href='download.html' class='btn-jprt-lg'>Download</a>
+				<a href='demo.html' class='btn-jprt-lg'>Github</a>
+			</div>
+		</header>
+		
+		
+		<section id='doc_index' class='container'>
+			<ul>
+				<li><a href='#introduction'>1. Introduction</a></li>
+				<li><a href='#requirements'>2. Requirements</a></li>
+				<li><a href='#quick_usage'>3. Usage</a></li>
+				<li><a href='#settings'>4. Default settings</a></li>
+				<li><a href='#decorations'>5. Decorations</a></li>
+				<li><a href='#themes'>6. Themes</a></li>
+				<li><a href='#helpers'>7. Helpers</a></li>
+			</ul>
+		</section>
+		
+		
+		<section id='introduction' class='container'>
+			<div class='row'>
+				<h1>1. Introduction</h1>
+			</div>
+			<div class='row section-content'>
+				<p>JPortilio is a JQuery plugin intended for creating a responsive list of filterable items. Items are filtered by tags. JPortilio can be used to creating portfolio, but not only.</p>
+				<p><em>JPortilio is a new project, so if you've noticed any problem, please let us know: contact@codepany.com</em></p>
+			</div>
+		</section>
+		
+		
+		<section id='requirements' class='container'>
+			<div class='row'>
+				<h1>2. Requirements</h1>
+			</div>
+			<div class='row section-content'>
+				<ul>
+					<li>JQuery - <a href='http://jquery.com/download/'>download</a> or use it like it is described <a href='http://jquery.com/download/#using-jquery-with-a-cdn'>here</a></li>
+				</ul>
+			</div>
+		</section>
+
+
+
+		<section id='quick_usage' class='container'>
+			<div class='row'>
+				<h1>3. Usage</h1>
+			</div>
+			
+			<div class='section-content'>
+				<div class='row'>
+					<h2>3.1 Download and Installation</h2>
+					<p>Firstly, <a href='download.html'>download</a> jPortilio. At least, download <strong>jportilio.js</strong> (or jportilio.min.js in minimized version) and <strong>jportilio.css</strong> (or jportilio.min.css in minimized version). You can download also theme's CSS file, but is not required. Then copy CSS and Javascript files to your project.</p>
+					<pre><code class="language-markup">
+&lt;link rel="stylesheet" type="text/css" href="css/jportilio.css" />
+
+&lt;script type="text/javascript" src="js/jportilio.js">&lt;/script>
+</code></pre>
+<p>OR</p>
+					<pre><code class="language-markup">
+&lt;link rel="stylesheet" type="text/css" href="css/jportilio.min.css" />
+
+&lt;script type="text/javascript" src="js/jportilio.min.js">&lt;/script>
+</code></pre>
+				</div>
+				
+								
+				<div class='row'>
+					<h2>3.2 Preparing a basic structure</h2>
+					<p>JPortilio frame contains two main elements: a group of <strong>tag buttons</strong> and a <strong>grid of items</strong>. </p>
+					
+					<pre><code class="language-markup">
+&lt;!-- group of tag buttons -->
+&lt;div class='jprt-buttons'>
+	&lt;button class='jprt-btn' data-jprtgrid='jprt-1' data-tag='mobile' >Mobile&lt;/button>  
+	&lt;button class='jprt-btn' data-jprtgrid='jprt-1' data-tag='ux,design' >Design&lt;/button>
+&lt;/div>			
+	
+&lt;!-- grid of items -->
+&lt;div id='jprt-1' class='jprt-container'>
+
+	&lt;!-- first item -->
+	&lt;div class='jprt-item' data-tags='mobile'>
+		&lt;div class='jprt-caption'>
+			&lt;!-- caption -->
+		&lt;/div>
+		&lt;div class='jprt-content'>
+			&lt;!-- content -->
+		&lt;/div>
+		&lt;div class='jprt-hover'>
+			&lt;!-- hover -->
+		&lt;/div>
+	&lt;/div>
+	
+	
+	&lt;!-- second item -->
+	&lt;div class='jprt-item' data-tags='mobile,design'>
+		&lt;!-- ... -->
+	&lt;/div>
+	
+	
+	&lt;!-- other items -->
+		
+&lt;/div>    </code></pre>
+
+					<p>Important in buttons:</p>
+					<ul>
+						<li><code>data-jprtgrid</code> in button indicates on ID of grid,</li>
+						<li><code>data-tag</code> contains a list of tags used in filtering.</li>
+					</ul>
+					
+					<p>Important in grid:</p>
+					<ul>
+						<li>ID of grid DOM element is used by tag buttons (in example <code>jprt-1</code>),</li>
+						<li>Each item is created in <code>div</code> element with class <code>jprt-item</code>,</li>
+						<li><code>data-tags</code> is a list of tags assigned to specific item,</li>
+						<li>Each item may have 3 layers: 
+							<ul>
+								<li><code>jprt-caption</code> - is shown as caption of item,</li>
+								<li><code>jprt-hover</code> - is shown as hover layer of item, when cursor points on item,</li>
+								<li><code>jprt-content</code> - contains a details and may be shown on few different ways.</li>
+							</ul>	
+						</li>
+					</ul>
+					<p>The content of each layer can be freely created. It means that the fields with certain sizes are ready to fill in.</p>
+					
+				</div>
+				
+				
+				<div class='row'>
+					<h2>3.3 Javascript initialization</h2>
+					<p>JPortilio initialization:</p>
+<pre><code class="language-javascript">
+$(function () {
+  $('.jprt-container').jportilio(); 
+});</code></pre>
+					<p><code>jprt-container</code> is a DOM element containing the grid of items. <br>
+						JPortilio can be initialized with custom options, e.g: </p>
+<pre><code class="language-javascript">
+$(function () {
+  $('.jprt-container').jportilio({'ratio': '0.75', 'ws_lg': '4'}); 
+});</code></pre>
+					<p>More details about options can be found in section <a href='#settings'>Default settings</a></p>					
+				
+				</div>
+				
+				
+				<div class='row'>
+					<h2 class='example-h2'>3.4 Example 1 (without showing content yet)</h2>
+					<p>Example 1 bases on the previous section, so it hasn't full functionality. Example with source code you can find here <a href='example1.html' target='blank'>Example 1</a></p>
+					<p><em>(Fonts from example can be different than in your project. We used 'Dosis' font from google fonts.)</em></p>
+
+				</div>
+				
+				
+				
+				<div class='row'>
+					<h2>3.5 Content show</h2>
+					<p>Content can be shown in 3 different ways. In each case we need define at least <code>data-content-show</code> attribute for <code>jprt-item</code>.</p>
+					
+					<h4><strong>A) Cover of item</strong></h4>
+					<p>The content layer covers the whole item. Add <code>data-content-show='<strong>cover</strong>'</code> to specific <code>jprt-item</code> element:</p>
+<pre><code class="language-markup">
+&lt;div id='jprt-1' class='container jprt-container'>
+
+	&lt;div class='jprt-item' data-tags='mobile' data-content-show='cover'>
+		&lt;div class='jprt-caption'>
+			&lt;!-- ... -->
+		&lt;/div>
+		&lt;div class='jprt-content'>
+			&lt;!-- ... -->
+		&lt;/div>
+		&lt;div class='jprt-hover'>
+			&lt;!-- ... -->
+		&lt;/div>
+		
+		&lt;!-- ... -->
+		
+	&lt;/div>
+&lt;/div></code></pre>
+					
+					<h4><strong>B) Displayed in new window</strong></h4>
+					<p>Clicking on item redirects to another page. This solution requires two data attributes:</p>
+					<ul>
+						<li><code>data-content-show='redirect'</code> with value <em>redirect</em> causes that clicking on item will redirect user,</li>
+						<li><code>data-content-url='http://www.your-url.com'</code> stores the url of redirection.</li>
+					</ul>
+<pre><code class="language-markup">
+&lt;div id='jprt-1' class='container jprt-container'>					
+					
+	&lt;div class='jprt-item' data-tags='mobile,design' data-content-show='redirect' data-content-url='http://www.jportilio.com'>
+		&lt;div class='jprt-caption'>
+			&lt;!-- ... -->
+		&lt;/div>
+		&lt;div class='jprt-content'>
+					
+		&lt;/div>
+		&lt;div class='jprt-hover'>
+			&lt;!-- ... -->
+		&lt;/div>
+	&lt;/div>
+					
+&lt;/div></code></pre>	
+
+					<p>However, if you want display any content on item and then redirect to new page, you can use method A "<em>cover</em>". And in content you can place a button or link to another page.</p>
+				
+					<h4><strong>C) Expand section below of item's row</strong></h4>
+					<p>This solution will show new section below the item's row. The content section has the same width as width of grid. To use this solution, it's needed to add data attribute: <code>data-content-show='new_section'</code>:</p>
+				</div>
+<pre><code class="language-markup">
+&lt;div id='jprt-1' class='container jprt-container'>	
+
+	&lt;div class='jprt-item' data-tags='ux' data-content-show='new_section'>
+		&lt;div class='jprt-caption'>
+			&lt;!-- ... -->
+		&lt;/div>
+		&lt;div class='jprt-content'>
+			&lt;!-- ... -->
+		&lt;/div>
+		&lt;div class='jprt-hover'>
+			&lt;!-- ... -->
+		&lt;/div>
+	&lt;/div>
+
+&lt;/div></code></pre>				
+				
+								
+				<div class='row'>
+					<h2 class='example-h2'>3.6 Example 2</h2>
+					<p>Example 2 presents the three methods of showing content. Example with source code you can find here <a href='example2.html' target='blank'>Example 2</a></p>
+					
+				</div>
+				
+				
+				<div class='row'>
+					<h2>3.7 Optional decorations</h2>
+					<p>Layers (caption, hover and content) can be created as you will. However, we prepared few decorations, which you can add to your project. More details about decorations, you can find in section <a href='#decorations'>Decorations</a>.</p>
+					
+					
+				</div>
+			</div>
+			
+		</section>
+		
+		
+		
+		<section id='settings' class='container'>
+			<div class='row'>
+				<h1>4. Default settings</h1>
+			</div>
+			
+			<div class='section-content'>
+				<div class='row'>
+					<p>Default settings can be modified by plugin initialization in Javascript part. Following initialization uses default values:</p>
+<pre><code class="language-javascript">
+$(function () {
+  $('.jprt-container').jportilio(); 
+});</code></pre>
+					<p>Modifications can be done like below:</p>				
+<pre><code class="language-javascript">
+$(function () {
+  $('.jprt-container').jportilio({
+							  	'ratio': '0.75',
+							  	 'ws_lg': '4'
+  }); 
+});</code></pre>
+					<p>The list of settings:</p>
+					<ul>
+						<li>ratio - the ratio of item's width to item's height (ratio = 0.75  =>  height = width * 0.75),</li>
+						<li>ws_xs - number of items in row for small devices ( <768px )</li>
+						<li>ws_sm - number of items in row ( 768px < x < 992px )</li>
+						<li>ws_md - number of items in row ( 992px < x < 1200px )</li>
+						<li>ws_lg - number of items in row ( 1200px < x )</li>
+					</ul>
+					
+					<p>Default values of settings:</p>
+					<ul>
+						<li>ratio: 0.75</li>
+						<li>ws_xs: 1 </li>
+						<li>ws_sm: 2 </li>
+						<li>ws_md: 3 </li>
+						<li>ws_lg: 4 </li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+		
+		<section id='decorations' class='container'>
+			<div class='row'>
+				<h1>5. Decorations</h1>
+			</div>
+			
+			<div class='section-content'>
+				<div class='row'>
+					<p>JPortilio has a few prepared decorations, which can be easily added to any project.</p>
+					<img id='decorations-img-1' src='img_doc/decorations1.png'>
+					<p>Some features can be cover by other layers. If something is placed in caption layer, it can be invisible through hover and content layer due to z-index. Decorations can be visible over higher layers by changing its z-index. It can be done by adding <code>depth-over-XXX</code> class. More details in section <a href='#helpers'>Helpers</a>.</p>
+				</div>
+				<div class='row'>
+					<h2>5.1 Item status</h2>
+					<p>It is a small icon indicating on status of item. It's placed in top-right corner by default. Use <code>jprt-item-status</code> class to add item status.</p>
+<pre><code class="language-markup">
+&lt;div class='jprt-caption'>
+	&lt;div class='jprt-item-status' data-toggle="tooltip" data-placement="top" title="Working...">
+		&lt;span class="glyphicon glyphicon-cog" aria-hidden="true">&lt;/span>
+	&lt;/div>
+&lt;/div>
+</code></pre>
+					<p>The glyphicon was used in above example (glyphs can be found in Bootstrap 3), but there can be anything.</p>
+					<p>If element should be visible over hover layer, please add class <code>depth-over-hover</code>:</p>
+<pre><code class="language-markup">
+&lt;div class='jprt-caption'>
+	&lt;div class='jprt-item-status depth-over-hover' data-toggle="tooltip" data-placement="top" title="Working...">
+		&lt;span class="glyphicon glyphicon-cog" aria-hidden="true">&lt;/span>
+	&lt;/div>
+&lt;/div>
+</code></pre>	
+				</div>
+				
+				<div class='row'>
+					<h2>5.2 Item features</h2>
+					<p>It is a list of attributes, placed in top-left corner by default. The features are provided by <code>jprt-feature</code> class.</p>
+<pre><code class="language-markup">
+&lt;div class='jprt-caption'>
+	&lt;div class='jprt-features'>
+		&lt;ul>
+			&lt;li>Android&lt;/li>
+			&lt;li>iOS&lt;/li>
+		&lt;/ul>
+	&lt;/div>
+&lt;/div>
+</code></pre>
+				</div>
+				
+				<div class='row'>
+					<h2>5.3 Caption title</h2>
+					<p>Caption title can be stylized by adding class <code>jprt-item-title</code>.</p>
+<pre><code class="language-markup">
+&lt;div class='jprt-caption'>
+	&lt;h1 class='jprt-item-title'>"Cover"&lt;/h1>
+&lt;/div>
+</code></pre>
+				</div>
+				
+				<div class='row'>
+					<h2>5.4 Item tags</h2>
+					<p>The tags can be stylized by class <code>jprt-item-tags</code>.</p>
+<pre><code class="language-markup">
+&lt;div class='jprt-caption'>
+	&lt;p class='jprt-item-tags'>Tag: mobile, design&lt;/p>
+&lt;/div>
+</code></pre>
+				</div>
+				
+				<div class='row'>
+					<h2>5.5 Arrow linking item with content</h2>
+					<p>It's possible to add arrow in circle linking the item's caption with its content element placed below. This item is available only for <code>data-content-show='new_section'</code>.</p>
+					<img id='decorations-img-2' src='img_doc/decorations2.png'>
+					<p>This element consists of three components: <code>jprt-arrow-down-border, jprt-arrow-down-back, jprt-arrow-down</code>.</p>
+<pre><code class="language-markup">
+&lt;div class='jprt-caption'>
+	&lt;div class='jprt-arrow-down-border'>
+		&lt;div class='jprt-arrow-down-back'>
+			&lt;div class='jprt-arrow-down'>&lt;/div>
+		&lt;/div>
+	&lt;/div>
+&lt;/div>
+</code></pre>
+					<p>It's possible to styling element by adding additional classes to proper elements. <code>jprt-arrow-down-border</code> is a div element and is covered by smaller circle: <code>jprt-arrow-down-back</code>. So it's possible to create gradient border by adding class with background in gradient to <code>jprt-arrow-down-border</code>.</p>
+				</div>
+				
+				
+			</div>
+		</section>
+		
+		
+		
+		
+		<section id='themes' class='container'>
+			<div class='row'>
+				<h1>6. Themes</h1>
+			</div>
+			
+			<div class='section-content'>
+				<div class='row'>
+					<p>JPortilio has a few themes ready to use. You can preview them on <a href='demo.html'>demo</a> page. The using theme is very simple. Download and import to project CSS file with desirable theme and add to a group of buttons and grid of items the theme's basic class.</p>
+
+				</div>
+				
+				<div class='row'>
+					<h2>6.1 List of themes and basic class names</h2>
+					<ul>
+						<li>default - it is used by default</li>
+						<li>dark - <code>jprt-dark-style</code></li>
+						<li>light - <code>jprt-light-style</code></li>
+						<li>codepany - <code>jprt-codepany-style</code></li>
+					</ul>
+
+				</div>
+				
+				<div class='row'>
+					<h2>6.2 Usage</h2>
+					<p>Add basic class of style to <strong>the group of tag buttons</strong> and <strong>the grid of items</strong>:</p>
+<pre><code class="language-markup">
+&lt;!-- group of tag buttons -->
+&lt;div id='tag-buttons' class='jprt-buttons jprt-dark-style'>
+	&lt;!-- ... -->
+&lt;/div>
+
+&lt;!-- grid of items -->
+&lt;div id='jprt-1' class='container jprt-container jprt-dark-style'>
+	&lt;!-- ... -->
+&lt;/div>
+</code></pre>
+				</div>
+			</div>
+		</section>
+		
+		
+		<section id='helpers' class='container'>
+			<div class='row'>
+				<h1>7. Helpers</h1>
+			</div>
+			
+			<div class='section-content'>
+				<div class='row'>
+					<h3>Z-index</h3>
+					<p>Elements placed in specific layer can be not visible through higher layers. The layer hierachy from bottom to top is following:</p>
+					<ul>
+						<li>item: z-index = 2</li>
+						<li>caption: z-index = 2</li>
+						<li>hover: z-index = 6</li>
+						<li>content: z-index = 10</li>
+					</ul>
+					<p>If element placed in some layer should be visible through other layers, use class <code>depth-over-XXX</code>, where <code>XXX</code> is a layer name.</p>
+					<p>For example, element placed in caption layer can be visible through hover layer if <code>depth-over-hover</code> class is added.</p>
+				</div>
+				
+			</div>
+		</section>
+				
+				
+
+
+		<footer class='container-fluid'>
+			<div class='container'>
+				<div class='row'>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<h1>Index:</h1>
+						<ul class='index_in_footer'>
+							<li><a href='index.html'>start</a></li>
+							<li><a href='doc.html'>documentation</a></li>
+							<li><a href='demo.html'>demo</a></li>
+							<li><a href='demo.html'>download</a></li>
+							<li><a href='github.com'>github</a></li>
+						</ul>
+					</div>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<h1>Examples:</h1>
+						<ul class='examples_list'>
+							<li><a href='index.html'>start</a></li>
+							<li><a href='demo.html'>demo</a></li>
+							<li><a href='http://codepany.com'>codepany.com</a></li>
+						</ul>
+						<h1>Resources</h1>
+						<ul>
+							<li>tutorial: <a href='http://codeonhill.com'>codeonhill.com</a></li>
+						</ul>
+						
+					</div>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<div class='credits'>
+							<h1>Credits:</h1>
+							<ul>
+								<li> code snippets: prismjs.com</li>
+							</ul>
+						</div>
+						<div class='contact_in_footer'>
+							<h1>Contact</h1>
+							<ul>
+								<li><a href='http://github.com'>Github</a></li>
+								<li><a href='http://codepany.com'>codepany.com</a></li>
+								<li>contact@codepany.com</li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</footer>
+	</body>
+</html>

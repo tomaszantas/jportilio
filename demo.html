@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width"> 
+		<title>jportilio</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<!--link rel="stylesheet" type="text/css" href="css/own_grid_system.css" /-->
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/prism.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio_style_dark.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio_style_light.css" />
+		<link rel="stylesheet" type="text/css" href="css/jportilio_style_codepany.css" />
+
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>	
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jportilio.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/prism.js"></script>
+	</head>
+	<body>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-61329465-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+		
+		<header class='container-fluid'>
+			<div class='row text-center'>
+				<h1>jPortilio.js</h1>
+				<p>JQuery plugin to create nice filterable grid of items, such as portfolio</p>
+			</div>
+			<div class='row text-center btns-header'>
+				<a href='index.html' class='btn-jprt-lg'>jPortilio</a>
+				<a href='doc.html' class='btn-jprt-lg'>Documentation</a>
+				<a href='download.html' class='btn-jprt-lg'>Download</a>
+				<a href='demo.html' class='btn-jprt-lg'>Github</a>
+			</div>
+		</header>
+		
+		
+		<div class='container'>
+			<div class='row text-center jprt-buttons'>
+				<p>Change style:</p>
+				<button id='default-style' class='jprt-btn jprt-btn-style'>Default</button>
+				<button id='dark-style' class='jprt-btn jprt-btn-style'>Dark</button>
+				<button id='light-style' class='jprt-btn jprt-btn-style'>Light</button>
+				<button id='codepany-style' class='jprt-btn jprt-btn-style'>Codepany</button>
+			</div>
+		</div>
+		
+		<div id='demo' class='container'>
+			<div class='row text-center'>
+				<h1>My work</h1>
+			</div>
+		</div>
+		
+		<div id='tag-buttons' class='jprt-buttons'>
+			<button class='jprt-btn' data-jprtgrid='jprt-1' data-tag='mobile'>Mobile</button>
+			<button class='jprt-btn' data-jprtgrid='jprt-1' data-tag='ux,design'>Design</button>
+		</div>
+		
+		
+		<div id='jprt-1' class='container jprt-container'>
+			<div class='jprt-item' data-tags='mobile' data-content-show='cover'>
+				<div class='jprt-caption'>
+					<h1 class='jprt-item-title'>"Cover"</h1>
+					<p class='jprt-item-tags'>Tag: mobile</p>
+					<div class='jprt-item-status depth-over-hover' data-toggle="tooltip" data-placement="top" title="Working...">
+						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+					</div>
+					<div class='jprt-features'>
+						<ul>
+							<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>Android</li>
+							<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>iOS</li>
+						</ul>
+					</div>
+				</div>
+				<div class='jprt-content'>
+					<h1>This is the content of item!</h1>
+				</div>
+				<div class='jprt-hover'>
+					<h1>Cover (click on me!)</h1>
+				</div>
+				
+			</div>
+			
+			<div class='jprt-item' data-tags='mobile,design' data-content-show='redirect' data-content-url='http://www.codepany.com'>
+				<div class='jprt-caption'>
+					<h1 class='jprt-item-title'>"Redirect to new page"</h1>
+					<p class='jprt-item-tags'>Tag: mobile, design</p>
+					<div class='jprt-item-status depth-over-hover' data-toggle="tooltip" data-placement="top" title="Working...">
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					</div>
+					<div class='jprt-features'>
+						<ul>
+							<li>Responsive</li>
+						</ul>
+					</div>
+				</div>
+				<div class='jprt-content'>
+							
+				</div>
+				<div class='jprt-hover'>
+					<h1>I'll redirect you to new page!</h1>
+				</div>
+			</div>
+			
+			<div class='jprt-item' data-tags='ux' data-content-show='new_section'>
+				<div class='jprt-caption'>
+					<h1 class='jprt-item-title'>"New section"</h1>
+					<p class='jprt-item-tags'>Tag: ux</p>
+					<div class='jprt-item-status depth-over-hover' data-toggle="tooltip" data-placement="top" title="Working...">
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					</div>
+					<div class='jprt-arrow-down-border'>
+						<div class='jprt-arrow-down-back'>
+							<div class='jprt-arrow-down'></div>
+						</div>
+					</div>
+				</div>
+				<div class='jprt-content'>
+					<h1>This content is shown in new element, below the item!</h1>
+				</div>
+				<div class='jprt-hover'>
+					<h1>I'll display content below!</h1>
+				</div>
+			</div>
+			
+			<div class='jprt-item' data-tags='mobile,design' data-content-show='cover'>
+				<div class='jprt-caption' >
+					<h1 class='jprt-item-title'>"Cover"</h1>
+					<p class='jprt-item-tags'>Tag: mobile, design</p>
+					<div class='jprt-item-status depth-over-hover' data-toggle="tooltip" data-placement="top" title="Working...">
+						<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+					</div>
+					<div class='jprt-features'>
+						<ul>
+							<li>Responsive</li>
+						</ul>
+					</div>
+				</div>
+				<div class='jprt-content'>
+					<h1>This is the content of item!</h1>
+				</div>
+				<div class='jprt-hover'>
+					<h1>Cover (click on me!)</h1>
+				</div>
+			</div>
+			
+			
+			<div class='jprt-item' data-content-show='redirect' data-content-url='http://www.codepany.com'>
+				<div class='jprt-caption'>
+					<h1 class='jprt-item-title'>"Redirect to new page"</h1>
+					<p class='jprt-item-tags'>Tag: - </p>
+					<div class='jprt-item-status depth-over-hover' data-toggle="tooltip" data-placement="top" title="Working...">
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class='jprt-content'>
+							
+				</div>
+				<div class='jprt-hover'>
+					<h1>I'll redirect you to new page!</h1>
+				</div>
+			</div>
+			
+			<div class='jprt-item' data-content-show='new_section'>
+				<div class='jprt-caption'>
+					<h1 class='jprt-item-title'>"New section"</h1>
+					<p class='jprt-item-tags'>Tag: - </p>
+					<div class='jprt-item-status depth-over-hover' data-toggle="tooltip" data-placement="top" title="Working...">
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div class='jprt-content'>
+					<h1>This content is shown in new element, below the item!</h1>
+				</div>
+				<div class='jprt-hover'>
+					<h1>I'll display content below!</h1>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+
+
+		<footer class='container-fluid'>
+			<div class='container'>
+				<div class='row'>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<h1>Index:</h1>
+						<ul class='index_in_footer'>
+							<li><a href='index.html'>start</a></li>
+							<li><a href='doc.html'>documentation</a></li>
+							<li><a href='demo.html'>demo</a></li>
+							<li><a href='demo.html'>download</a></li>
+							<li><a href='github.com'>github</a></li>
+						</ul>
+					</div>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<h1>Examples:</h1>
+						<ul class='examples_list'>
+							<li><a href='index.html'>start</a></li>
+							<li><a href='demo.html'>demo</a></li>
+							<li><a href='http://codepany.com'>codepany.com</a></li>
+						</ul>
+						<h1>Resources</h1>
+						<ul>
+							<li>tutorial: <a href='http://codeonhill.com'>codeonhill.com</a></li>
+						</ul>
+						
+					</div>
+					<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+						<div class='credits'>
+							<h1>Credits:</h1>
+							<ul>
+								<li> code snippets: prismjs.com</li>
+							</ul>
+						</div>
+						<div class='contact_in_footer'>
+							<h1>Contact</h1>
+							<ul>
+								<li><a href='http://github.com'>Github</a></li>
+								<li><a href='http://codepany.com'>codepany.com</a></li>
+								<li>contact@codepany.com</li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</footer>
+	</body>
+</html>

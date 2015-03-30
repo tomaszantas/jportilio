@@ -1,0 +1,277 @@
+.depth-over-caption {
+	z-index: 3;
+}
+.depth-over-hover {
+	z-index: 7;
+}
+.depth-over-content {
+	z-index: 11;
+}
+/*** grid ***/
+.jprt-container {
+	position: relative;
+	padding: 0;
+}
+.jprt-item {
+	position: absolute;
+	text-align: center;
+	
+	-webkit-transition: width 1s ease, top 1s ease, left 1s ease, opacity 0.5s ease;
+    -moz-transition:  width 1s ease, top 1s ease, left 1s ease, opacity 0.5s ease;
+    -o-transition:  width 1s ease, top 1s ease, left 1s ease, opacity 0.5s ease;
+    transition:  width 1s ease, top 1s ease, left 1s ease, opacity 0.5s ease;
+    z-index: 2;
+}
+.jprt-caption h1 {
+	margin: 0;
+}
+
+.jprt-content {
+	position: absolute;
+	display: none;
+	width: 100%;
+	top: 0;
+	left: 0;
+	overflow-y: hidden;
+	
+	-webkit-transition: height 1s ease, top 1s ease, left 1s ease, opacity 0.5s ease;
+    -moz-transition:  height 1s ease, top 1s ease, left 1s ease, opacity 0.5s ease;
+    -o-transition:  height 1s ease, top 1s ease, left 1s ease, opacity 0.5s ease;
+    transition:  height 1s ease, top 1s ease, left 1s ease, opacity 0.5s ease;
+    z-index: 10;
+}
+.jprt-content.show_new_section {
+	display: inline-block;
+	z-index: 4;
+}
+
+.jprt-hover {
+	position: absolute;
+	
+	opacity: 0;
+	width: 100%;
+	top: 0;
+	left: 0;
+	
+	-webkit-transition: width 1s ease, top 1s ease, left 1s ease, opacity 0.25s ease;
+    -moz-transition:  width 1s ease, top 1s ease, left 1s ease, opacity 0.25s ease;
+    -o-transition:  width 1s ease, top 1s ease, left 1s ease, opacity 0.25s ease;
+    transition:  width 1s ease, top 1s ease, left 1s ease, opacity 0.25s ease;
+    z-index: 6;
+}
+
+.jprt-item:hover {
+	cursor: pointer;
+}
+.jprt-item:hover .jprt-hover {
+	opacity: 1;
+}
+/**** decorations ****/
+.jprt-features {
+	position: absolute;
+	top: 15px;
+	left: 0;
+}
+.jprt-features ul {
+	list-style: none;
+	padding: 0;
+}
+.jprt-features li {
+	list-style: none;
+	margin-bottom: 6px;
+	padding: 3px 6px;
+	font-size: 12px;
+}
+
+.jprt-item-status {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 14px;
+}
+
+.jprt-item-tags {
+	position: absolute;
+	bottom: 0;
+	padding: 5px 10px;
+	width: 100%;
+}
+.jprt-item-title {
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	font-size: 24px;
+	padding: 10px;
+}
+h1.jprt-item-title {
+	margin-top: -13px;
+}
+
+.jprt-caption-img {
+	width: 30%;
+	height: auto;
+	top: 50px;
+	position: relative;
+}
+
+
+/**************** STYLES GENERAL *************************/
+.jprt-btn-transparent-white {
+	color: #fff;
+	background: none;
+	border: 1px solid #fff;
+	padding: 10px 20px;
+	outline: none;
+}
+.jprt-btn-transparent-white:hover {
+	background: rgba(255,255,255,0.3);
+	outline: none;
+}
+.jprt-arrow-down-border {
+	display: none;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	background: #444;
+	padding: 2px;
+	left: 50%;
+	margin-left: -30px;
+	border-radius: 50%;
+	z-index: 15;
+	margin-bottom: -30px;
+}
+.jprt-arrow-down-back {
+	width: 56px;
+	height: 56px;
+	position: absolute;
+	background: #fff;
+	top: 2px;
+	left: 2px;
+	border-radius: 50%;
+}
+.jprt-arrow-down {
+	transform: rotate(45deg) ;
+	-webkit-transform: rotate(45deg) ;
+	-moz-transform: rotate(45deg) ;
+	-o-transform: rotate(45deg) ;
+	-ms-transform: rotate(45deg) ;
+	background: none;
+	border-bottom: 2px solid #444;
+	border-right: 2px solid #444;
+	border-radius: 2px;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	margin: auto;
+	margin-top: 15px;
+}
+
+/* backgrounds */
+.jprt-bg-build-area {
+	background: repeating-linear-gradient(
+	  -45deg,
+	  #444,
+	  #444 15px,
+	  #dab91f 15px,
+	  #dab91f 30px
+	);
+}
+.jprt-bg-build-area {
+	background: repeating-linear-gradient(
+	  -45deg,
+	  #444,
+	  #444 10px,
+	  #dab91f 10px,
+	  #dab91f 20px
+	);
+}
+
+
+/**********************************************************/
+/**********************************************************/
+/****************** STYLE DEFAULT *************************/
+/**********************************************************/
+/**********************************************************/
+/*** buttons ***/
+.jprt-buttons {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.jprt-buttons .jprt-btn {
+	background: #27b0d1;
+	color: #fff;
+	font-size: 16px;
+	padding: 10px 15px;
+	margin: 10px;
+	box-shadow: none;
+	border: 2px solid #27b0d1;
+	outline-style: none;
+}
+.jprt-buttons .jprt-btn:hover {
+	background: #27dbd1;
+	color: #fff;
+	border: 2px solid #27dbd1;
+	outline-style: none;
+}
+.jprt-buttons .jprt-btn.jprt-btn-active {
+	background: #fff;
+	color: #27bbd1;
+	outline-style: none;
+	border: 2px solid #27dbd1;
+}
+.jprt-buttons .jprt-btn.jprt-btn-active:hover {
+	background: #27dbd1;
+	color: #fff;
+	border: 2px solid #27dbd1;
+	outline-style: none;
+}
+
+/*** grid ***/
+.jprt-item {
+	background: #ddd;
+}
+.jprt-item:nth-child(odd) .jprt-caption {
+	background: #27b0d1;
+}
+.jprt-item:nth-child(even) .jprt-caption {
+	background: #27bbd1;
+}
+.jprt-hover {
+	background: #27d1a9;
+}
+.jprt-content {
+	background: #777;
+	color: #eee;
+}
+
+
+
+/*** item caption ***/
+.jprt-caption h1 {
+	color: #fff;
+}
+
+
+/**** decorations ***/
+.jprt-features li {
+	background: #fff;
+	color: #27b0d1;
+}
+
+.jprt-item-status {
+	color: #fff;
+}
+
+.jprt-item-tags {
+	background: rgba(0,0,0,0.2);
+	color: #fff;
+}
+.jprt-item-title { 
+	background: rgba(0,0,0,0.2);
+	color: #fff;
+}
+
+
+

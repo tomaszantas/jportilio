@@ -1,0 +1,81 @@
+/*** buttons ***/
+.jprt-light-style.jprt-buttons {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.jprt-light-style.jprt-buttons .jprt-btn {
+	background: #fff;
+	color: #222;
+	font-size: 16px;
+	padding: 10px 20px;
+	margin: 10px;
+	box-shadow: none;
+	border: 2px solid #ddd;
+	outline-style: none;
+}
+.jprt-light-style.jprt-buttons .jprt-btn:hover {
+	background: #444;
+	color: #eee;
+	border: 2px solid #eee;
+	outline-style: none;
+}
+.jprt-light-style.jprt-buttons .jprt-btn.jprt-btn-active {
+	background: #4db378;
+	color: #fff;
+	border: 1px solid #fff;
+	outline-style: none;
+	border: 2px solid #fff;
+}
+.jprt-light-style.jprt-buttons .jprt-btn.jprt-btn-active:hover {
+	background: #4db378;
+	color: #ddd;
+	border: 2px solid #4db378;
+	outline-style: none;
+}
+
+/*** grid ***/
+.jprt-light-style .jprt-item {
+	background: #eee;
+}
+.jprt-light-style .jprt-item:nth-child(odd) .jprt-caption {
+	background: #eee;
+}
+.jprt-light-style .jprt-item:nth-child(even) .jprt-caption {
+	background: #ddd;
+}
+.jprt-light-style .jprt-hover {
+	background: #aaa;
+}
+.jprt-light-style .jprt-content {
+	background: #ccc;
+	color: #444;
+}
+
+
+
+/*** item caption ***/
+.jprt-light-style .jprt-caption h1 {
+	color: #444;
+}
+
+
+/**** decorations ***/
+.jprt-light-style .jprt-features li {
+	background: #777;
+	color: #fff;
+}
+
+.jprt-light-style .jprt-item-status {
+	color: #777;
+}
+
+.jprt-light-style .jprt-item-tags {
+	background: rgba(255,255,255,0.4);
+	color: #444;
+}
+.jprt-light-style .jprt-item-title { 
+	background: rgba(255,255,255,0.4);
+	color: #444;
+}
+
