@@ -43,7 +43,7 @@ $(function () {
 			//var witem = el.outerWidth(true)/items_in_row;
 			var witem = el.width()/items_in_row;
 			// calculate item's height f(ratio, width):
-			var h = opts.ratio*parseFloat(witem);
+			var h = (opts.ratio*parseFloat(witem))-(opts.item_margin*2);
 			
 			// set grid items:
 			var left_counter = 0; // counts the number of items in row
@@ -54,6 +54,39 @@ $(function () {
 			el.children('.jprt-item').each(function(){
 				var $t = $(this);
 				
+				// initialize width of content displaying in new section:
+				/*if($t.find('.jprt-contents')) {
+					$t.find('.jprt-content-ns').css({
+						width: el.width()+'px'
+					});
+				}*/
+				/*if($t.find('.jprt-content').data('content-show','cover')) {
+					console.log('content-show cover');
+					$t.find('.jprt-content').css({
+						height: h+'px'
+					});
+				}*/
+				/*if($t.find('.jprt-content').data('content-show','new_section')) {
+					console.log('content-show new section');
+					var hns = $t.find('.jprt-content').css('height');
+					$t.find('.jprt-content').css({
+						height: hns+'px'
+					});
+				}*/
+				/*if($t.data('content-show','cover')) {
+					console.log('content-show cover '+$t.data('content-show'));
+					$t.find('.jprt-content').css({
+						height: h+'px'
+					});
+				}*/
+				/*if($t.data('content-show','new_section')) {
+					
+					var hns = $t.find('.jprt-content').height(); 
+					console.log('content-show new section '+hns);
+					$t.find('.jprt-content').css({
+						height: hns+'px'
+					});
+				}*/
 				if($t.data('content-show') === 'cover') {
 					$t.find('.jprt-content').css({
 						height: h+'px'
@@ -62,18 +95,26 @@ $(function () {
 				if($t.data('content-show') === 'new_section') {
 					var $cont = $t.find('.jprt-content')
 					$cont.css({ position: "absolute", visibility: "hidden", display: "block", width: el.width()+'px' });
+					//var cont_h = $cont.outerHeight();
 					$cont.css({ position: "", visibility: "", display: "" });
+					/*$t.find('.jprt-content').css({
+						height: hns+'px'
+					});*/
 				}
 				
 				
 				// check if filter conditions (tags) are satisfied: (true - display item, false - collapse item)				
 				if(filterCheck($t)) {
+					//console.log('top:  '+((top_counter*h)+shift_down)+ '  shift_down: '+shift_down+'  top_counter: '+top_counter+'  h: '+h);
+					//console.log('item margin: '+((top_counter*(h+parseFloat(opts.item_margin)))+shift_down));
 					$t.css({
 						display: 'block',
 						height: h+'px',
-						width: witem+'px',
-						top: ((top_counter*h)+shift_down)+'px',
-						left: (left_counter*witem)+'px'
+						width: (witem-(opts.item_margin*2))+'px',
+						top: ((top_counter*(h+parseFloat(opts.item_margin*2)))+shift_down)+'px',
+						left: (left_counter*witem)+'px',
+						'margin-top': opts.item_margin+'px',
+						'margin-left': opts.item_margin+'px'
 					});
 					
 					// set item caption:
@@ -92,7 +133,7 @@ $(function () {
 						var cnt_h = cnt_ns.outerHeight();
 						cnt_ns.css({
 							'margin-top': h+'px',
-							width: el.width()+'px',
+							width: (el.width()-(opts.item_margin*2))+'px',
 							'margin-left': -(left_counter*witem)+'px'
 						});
 						shift_down_temp = cnt_h;
@@ -137,7 +178,7 @@ $(function () {
 			
 			// Set the height of whole grid container. (it's necessary because thew item are 'absolute')
 			el.css({
-				height: (((top_counter+1)*h)+shift_down)+'px' 
+				height: (((top_counter+1)*(h+(opts.item_margin*2)))+shift_down)+'px' 
 			});
 		}
 		
@@ -269,7 +310,8 @@ $(function () {
 	    ws_xs: 1,
 	    ws_sm: 2,
 	    ws_md: 3,
-	    ws_lg: 4
+	    ws_lg: 4,
+	    item_margin: 0
 	};
 
 });
