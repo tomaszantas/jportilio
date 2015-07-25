@@ -13,6 +13,7 @@ $(function () {
 				
 				if(tags != null && tags.length > 0) {
 					var found = false;
+					tags = tags.replace(/ /g,'');//clear whitespace to match tags better
 					tags = tags.split(',');
 					tags.map(function(a) {
 						if($.inArray(a,opts.filter) != -1) {
