@@ -13,6 +13,8 @@ $(function () {
 				
 				if(tags != null && tags.length > 0) {
 					var found = false;
+					tags = tags.replace(/ /g,'');//clear whitespace to match tags better
+					tags = tags.toLowerCase();//standardize case to match tags better
 					tags = tags.split(',');
 					tags.map(function(a) {
 						if($.inArray(a,opts.filter) != -1) {
@@ -207,7 +209,10 @@ $(function () {
 			/* tag filter buttons click: */
 			$('button[data-jprtgrid='+obj.attr('id')+']').on('click', function(e) {
 				var tag = $(this).data('tag');
-                if(tag != null) { tag = tag.split(',');}
+                if(tag != null) { 
+      						tag = tag.replace(/ /g,'');	//clear whitespace to match better
+      						tag = tag.toLowerCase(); 		//standardize case to match better
+      						tag = tag.split(',');}
 				
 				// check if button is active and add or remove tags:
 				if($(this).hasClass('jprt-btn-active')) {
